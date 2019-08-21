@@ -13,9 +13,9 @@ Canny Edge Detector aplica un filtro gaussiano para suavizar la imagen y elimina
 Watershed usa unos marcadores definidos por el usuario, para tratar los píxeles como una topografía local (elevación). El algoritmo inunda las cuencas desde los marcadores, hasta que las cuencas atribuidas a diferentes marcadores se encuentren en las líneas de cuenca. En muchos casos, los marcadores se eligen como mínimos locales de la imagen, desde los cuales se inundan las cuencas.
 Adicionalmente, la plataforma implementa los siguientes índices de comparación, para medir la similitud:
 
-•	Índice de Jaccard: mide el grado de similitud entre dos conjuntos, de cualquier tipo de elementos.
-•	Coeficiente de Sorenden-Dice: índice estadístico para comparar la similitud de dos muestras.
-•	Normalized Probabilistic Rand: es una medida de similitud entre dos agrupaciones de datos.
+- Índice de Jaccard: mide el grado de similitud entre dos conjuntos, de cualquier tipo de elementos.
+- Coeficiente de Sorenden-Dice: índice estadístico para comparar la similitud de dos muestras.
+- Normalized Probabilistic Rand: es una medida de similitud entre dos agrupaciones de datos.
 
 
 ## Manual de Usuario
