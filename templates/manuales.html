@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Python Tweet Analysis</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.2.8/d3.min.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script src="{{ url_for('static', filename='js/action.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Chart.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/graficar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sweetalert.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+  </head>
+  <body>
+    <header>
+      <!--<div class="container-logo">
+        <a href="http://www.inpec.gov.co/" target="_blank"><img src="images/logo.png" alt="img responsive" class="img-responsive img-fluid center-block" width="60%"></a>
+
+      </div>-->
+      <div class="container-fluid">
+        <section class="row">
+          <div class="col-md-8 text-center">
+            <img id="caron" src="{{ url_for('static', filename='images/logoProducto.png') }}" alt="img caron" class="img-fluid">
+          </div>
+          <!--<div class="col-md-4 center-block">
+            <a href="#"><p id="nosotros" align="center"><img  src="images/contacts-icon.png" alt="img responsive" width="60" height="60"> ABOUT US </p></a>
+          </div>-->
+          <div class="col-md-4 text-center">
+            <img id="lgF" src="{{ url_for('static', filename='images/Escudo_UD.png') }}" alt="img " class="img-fluid">
+
+          </div>
+        </section>
+
+      </div>
+    </header>
+
+
+
+
+    <!--<div class="">-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">ISAC</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="manuales">Manuales <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <!--</div>-->
+
+<br>
+    <!--<div class="panel panel-primary">-->
+<div class="container">
+  <section class="row">
+    <div class="col-md-3">
+      <h1>Manual de Usuario</h1>
+      <hr/ id="separador">
+      <p>Aquí puede descargar el Manual de usuario de la aplicación Image-Segmentation Assessment Comparison</p>
+      <a href="{{ url_for('static', filename='manuales/Manual_Usuario-ISAC.pdf') }}" download="Manual Usuario"><img id="manualUsuario" src="{{ url_for('static', filename='images/logoPDF.png') }}" alt="img caron" class="img-responsive img-fluid center-block"></a>
+    </div>
+    <span class="col-md-1"></span>
+    <div class="col-md-3">
+      <h1>Manual de Instalación</h1>
+      <hr/ id="separador">
+      <p>Aquí puede descargar el Manual de instalación de la aplicación Image-Segmentation Assessment Comparison</p>
+      <a href="{{ url_for('static', filename='manuales/Manual_Tecnico-ISAC.pdf') }}" download="Manual Instalacion"><img id="manualInstalacion" src="{{ url_for('static', filename='images/logoPDF.png') }}" alt="img caron" class="img-responsive img-fluid center-block"></a>
+    </div>
+    <span class="col-md-1"></span>
+    <div class="col-md-3">
+      <h1>Repositorio Github</h1>
+      <hr/ id="separador">
+      <p>Aquí puede ver el repositorio de GitHub de la aplicación Image-Segmentation Assessment Comparison</p>
+      <a href="https://github.com/Parall-UD/Image-Segmentation-Assessment-Comparison" target="_blank"><img id="github" src="{{ url_for('static', filename='images/logoGit.png') }}" alt="img caron" class="img-responsive img-fluid center-block"></a>
+    </div>
+  </section>
+</div>
+
+<!--<a href="{{ url_for('static', filename='manuales/1032479265.pdf') }}" download="iPhone User's Guide">click me</a>-->
+<br>
+<hr/ id="separador">
+<br>
+<div class="container" align="center">
+  <h1>Video Tutorial</h1>
+  <hr/ id="separador">
+  <p>El siguiente video presenta el funcionamiento de Image-Segmentation Assessment Comparison</p>
+  <video width="720" height="640" controls>
+  <source src="{{ url_for('static', filename='video/Video ISAC.mp4') }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+
+<br>
+  <div class="container-fluid">
+    <section class="row">
+      <div class="col-md-12 card text-white bg-dark" id="zonCopyRight">
+        <div class="card-body">
+          <p class="card-text" align="center">GICOGE<span class="glyphicon glyphicon-copyright-mark"></span> 2019-2020</p>
+        <p class="card-text" align="center">Grupo de Investigación Internacional en Informática, Comunicación y Gestión del Conocimiento</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+    <!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="{{ url_for('static', filename='js/downloadImages.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
